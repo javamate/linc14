@@ -25,8 +25,9 @@
          				'message.subject' : document.title
             		};
             		console.log(postData);
-            		$.post(v1ApiBase + '/boards/id/Appliances/messages/post?restapi.session_key='+$('#sessionKey').val()+'restapi.response_format=json', postData, function(data) {
+            		$.post(v1ApiBase + '/boards/id/Appliances/messages/post?restapi.session_key='+$('#sessionKey').val()+'&restapi.response_format=json&restapi.response_style=-types', postData, function(data) {
             			console.log(data);
+            			$('#lithBoxMessages').append('<p>'+data.response.message.body+'</p>');
             		});
             	});
         	});
