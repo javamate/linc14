@@ -2,22 +2,55 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-		<script src="bootstrap/js/bootstrap.min.js"></script>
-		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<title>Lithintegration Comment Widget</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<style>
+      		body {
+        		padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      		}
+    	</style>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<div id="main-content">
-			<p>Changed this - Tried again - From Eric</p>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="brand">LithIntegration</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <!--
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>-->
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    	<div class="container">
+			<div id="main-content">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit dui in posuere pharetra. Praesent tempor et leo in aliquam. Cras in semper diam, eget rhoncus erat. Suspendisse nec orci vitae sapien mattis faucibus sagittis id eros. Mauris vel nibh non leo euismod egestas vitae a sapien. Aliquam vehicula tincidunt massa, laoreet molestie felis luctus et. Fusce mollis pellentesque condimentum. Quisque quis fringilla nunc. Sed imperdiet auctor metus nec molestie. Fusce quis orci at massa venenatis tincidunt ac at libero. Cras sit amet dapibus augue. Nullam in libero id nibh congue tincidunt ac vel est.</p>
+				<p>Praesent faucibus, dolor vel sagittis gravida, sem tellus sagittis ligula, eu accumsan enim mauris vel diam. Quisque urna ipsum, ultricies sed volutpat non, auctor elementum massa. Mauris velit nisl, interdum a viverra vitae, blandit at ipsum. Duis erat nunc, vestibulum in risus ut, sagittis posuere libero. Aenean hendrerit fringilla nisl sit amet feugiat. In eget arcu ac libero adipiscing luctus et ut sem. Cras suscipit accumsan quam, sit amet vulputate orci porta nec. Etiam sed urna erat. Phasellus eu cursus lacus. Sed vel condimentum mauris. Vestibulum in malesuada enim. Vivamus volutpat tristique pretium. Nam vel purus tortor. Donec ac nulla a urna viverra condimentum non nec lorem. Duis rutrum dictum tortor sed semper. Vestibulum hendrerit nulla massa, eu dictum lorem auctor eget.</p>
+				<p>Duis blandit mauris a sem gravida, sit amet tempor eros viverra. Fusce at nulla dolor. Aenean varius eros sem, ut mollis sapien sodales sed. Vestibulum placerat lectus quis erat semper, eget venenatis elit dictum. Aenean nulla augue, eleifend vitae magna in, accumsan tempor leo. Ut laoreet viverra molestie. Maecenas aliquam odio id massa accumsan lobortis. Donec at ante arcu. Nullam eros velit, ultricies non sapien sit amet, lacinia mollis justo. Mauris lobortis diam in purus egestas aliquet. Morbi elementum metus et magna luctus, ut vulputate nisi condimentum. Vestibulum commodo malesuada suscipit.</p>
+				<p>Sed nisi ipsum, mollis aliquet ultrices eu, gravida eu nisl. Nunc sagittis velit ut bibendum varius. Nulla mattis sapien sit amet tortor rutrum vulputate. Curabitur et tempus magna. Sed ut est in arcu pretium suscipit nec ac lacus. Maecenas consequat massa id turpis cursus, non placerat massa tincidunt. Sed a sollicitudin felis. Cras volutpat congue urna sit amet congue. Sed vitae mauris at risus blandit faucibus vitae malesuada ipsum. Suspendisse fringilla tristique dui eget vulputate. Donec turpis mi, posuere eget dapibus ut, tempus a purus. Fusce non nibh ante.</p>
+				<p>Maecenas bibendum diam et elit sodales, eu rutrum lorem porta. Praesent vitae est bibendum, rutrum libero luctus, hendrerit odio. Cras fermentum sed enim quis luctus. Maecenas eget ultricies massa. Quisque et eros lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus diam risus, lacinia at malesuada ut, euismod tempor risus. In vitae mauris sed sapien mattis dapibus nec ut urna. Nam mollis justo eu tellus aliquet, id ultricies tellus facilisis. Morbi pellentesque ligula quis sapien viverra mattis. Duis dignissim vel lectus id tempus. Donec interdum, dolor id malesuada vulputate, justo diam blandit diam, at aliquam mi leo a justo. Nam lacinia nibh a ullamcorper porta. </p>
+			</div>
+			<div id="lithBox">
+	   			<input type="hidden" id="boardId" value="14"/>
+	   			<textarea id="lithBoxPost" name="message"></textarea>
+	   			<br>
+	   			<input type="button" id="lithBoxPostButton" value="Post your comment"/>
+	   			<div id="lithBoxMessages">
+	   			</div>
+			</div>
 		</div>
-		<div id="lithBox">
-   			<input type="hidden" id="boardId" value="14"/>
-   			<textarea id="lithBoxPost" name="message"></textarea>
-   			<input type="button" id="lithBoxPostButton" value="Post"/>
-   			<div id="lithBoxMessages">
-   			</div>
-		</div>
+
 	</body>
 </html>
