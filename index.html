@@ -10,15 +10,22 @@
         <script type="text/javascript">
         	//$(document).lithintegration({boardId:'Appliances'});
         	$(document).ready(function() {
+        		var communityUrl = 'http://linc03.dev.lcloud.com';
+        		var v1ApiBase = communityUrl + '/restapi/vc';
+        		var v2ApiBase = communityUrl + '/api/2.0/search?q=';
+        		$.post(v1ApiBase +'/authentication/sessions/login?user.login=linc&user.password=LithiumNow!&restapi.response_format=json&restapi.response_style=-types', function(data) {
+        			console.log('Authentication response:');
+        			console.log(data);
+        			$('#sessionKey').val(data.response.value);
+        		});
             	$('#lithBoxPostButton').click('click.lithintegration', function() {
             		console.log('post button clicked');
-            		var postData = { 'message': 
-            			{
-            				'body' : $('#lithPostBox').val()
-            			}
+            		var postData = { 
+         				'message.body' : $('#lithBoxPost').val(),
+         				'message.subject' : document.title
             		};
             		console.log(postData);
-            		$.post('http://linc03.dev.lcloud.com/restapi/vc/boards/id/Appliances/messages/post', postData, function(data) {
+            		$.post(v1ApiBase + '/boards/id/Appliances/messages/post?restapi.session_key='+$('#sessionKey').val()+'restapi.response_format=json', postData, function(data) {
             			console.log(data);
             		});
             	});
@@ -30,6 +37,7 @@
 			<p>Changed this - Tried again - From Eric</p>
 		</div>
 		<div id="lithBox">
+            <input type="hidden" id="sessionKey" value=""/>
    			<input type="hidden" id="boardId" value="14"/>
    			<textarea id="lithBoxPost" name="message"></textarea>
    			<input type="button" id="lithBoxPostButton" value="Post"/>
