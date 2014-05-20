@@ -12,6 +12,8 @@
     	</style>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<script type="text/javascript" src="js/lithintegration.js"></script>
 	</head>
 	<body>
 		<div class="navbar navbar-inverse navbar-fixed-top">
@@ -42,14 +44,17 @@
 				<p>Sed nisi ipsum, mollis aliquet ultrices eu, gravida eu nisl. Nunc sagittis velit ut bibendum varius. Nulla mattis sapien sit amet tortor rutrum vulputate. Curabitur et tempus magna. Sed ut est in arcu pretium suscipit nec ac lacus. Maecenas consequat massa id turpis cursus, non placerat massa tincidunt. Sed a sollicitudin felis. Cras volutpat congue urna sit amet congue. Sed vitae mauris at risus blandit faucibus vitae malesuada ipsum. Suspendisse fringilla tristique dui eget vulputate. Donec turpis mi, posuere eget dapibus ut, tempus a purus. Fusce non nibh ante.</p>
 				<p>Maecenas bibendum diam et elit sodales, eu rutrum lorem porta. Praesent vitae est bibendum, rutrum libero luctus, hendrerit odio. Cras fermentum sed enim quis luctus. Maecenas eget ultricies massa. Quisque et eros lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus diam risus, lacinia at malesuada ut, euismod tempor risus. In vitae mauris sed sapien mattis dapibus nec ut urna. Nam mollis justo eu tellus aliquet, id ultricies tellus facilisis. Morbi pellentesque ligula quis sapien viverra mattis. Duis dignissim vel lectus id tempus. Donec interdum, dolor id malesuada vulputate, justo diam blandit diam, at aliquam mi leo a justo. Nam lacinia nibh a ullamcorper porta. </p>
 			</div>
-			<div id="lithBox">
-	   			<input type="hidden" id="boardId" value="14"/>
-	   			<textarea id="lithBoxPost" name="message"></textarea>
-	   			<br>
-	   			<input type="button" id="lithBoxPostButton" value="Post your comment"/>
-	   			<div id="lithBoxMessages">
-	   			</div>
-			</div>
+			
+
+		
+		<div id="lithBox">
+            <input type="hidden" id="sessionKey" value=""/>
+   			<input type="hidden" id="boardId" value="14"/>
+            <input type="hidden" id="messageId" value="139"/>
+   			<textarea id="lithBoxPost" name="message"></textarea>
+   			<input type="button" id="lithBoxPostButton" value="Post your comment"/>
+   			<div id="lithBoxMessages">
+   			</div>
 		</div>
 
 	</body>

@@ -1,5 +1,6 @@
 (function( $ ){
 	var settings = {
+			'boardId': ''
 	};
 	var methods = {
 		init : function( options ) {
@@ -7,6 +8,12 @@
 			if ( options ) { 
 				$.extend( settings, options );
 			}
+		},
+		postMessage : function () {
+			
+		},
+		getMessages	: function () {
+			
 		}
 	}
 	$.fn.lithintegration = function( method ) {
