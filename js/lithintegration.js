@@ -16,7 +16,8 @@ $(document).ready(function() {
 		console.log(postData);
 		$.post(v1ApiBase + '/messages/id/'+$('#messageId').val()+'/reply?restapi.session_key='+$('#sessionKey').val()+'&restapi.response_format=json&restapi.response_style=-types', postData, function(data) {
 			console.log(data);
-			$('#lithBoxMessages').append('<p>'+data.response.message.body+'</p>');
+			var html = '<div class="reply"><p class="author">'+data.response.message.author.login+'</p><p class="body">'+data.response.message.body+'</p></div>';
+			$('#lithBoxMessages').prepend(html);
 		});
 	});
 	$.get(v2ApiBase + 'SELECT id, body, author FROM messages WHERE topic.id = "139" and depth > 0', function(data) {
@@ -25,7 +26,7 @@ $(document).ready(function() {
 		console.log(data);
 		$.each($responseData, function(key, value) {
 			console.log(value);
-			$('#lithBoxMessages').append('<p>'+value.body+'</p>');
+			$('#lithBoxMessages').append('<div class="reply"><p class="author">'+value.author.login+'</p><p class="body">'+value.body+'</p></div>');
 		});
 	});
 });
