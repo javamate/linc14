@@ -20,7 +20,7 @@ $(document).ready(function() {
 			$('#lithBoxMessages').prepend(html);
 		});
 	});
-	$.get(v2ApiBase + 'SELECT id, body, author FROM messages WHERE topic.id = "139" and depth > 0', function(data) {
+	$.get(v2ApiBase + 'SELECT id, author, body, post_time FROM messages WHERE topic.id = "139" and depth > 0 order by post_time desc', function(data) {
 		var $responseData = $(data.response.data.items);
 		console.log("raw get response data:");
 		console.log(data);
