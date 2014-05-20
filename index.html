@@ -25,7 +25,7 @@
          				'message.subject' : document.title
             		};
             		console.log(postData);
-            		$.post(v1ApiBase + '/boards/id/Appliances/messages/post?restapi.session_key='+$('#sessionKey').val()+'&restapi.response_format=json&restapi.response_style=-types', postData, function(data) {
+            		$.post(v1ApiBase + '/messages/id/'+$('#messageId').val()+'/reply?restapi.session_key='+$('#sessionKey').val()+'&restapi.response_format=json&restapi.response_style=-types', postData, function(data) {
             			console.log(data);
             			$('#lithBoxMessages').append('<p>'+data.response.message.body+'</p>');
             		});
@@ -40,6 +40,7 @@
 		<div id="lithBox">
             <input type="hidden" id="sessionKey" value=""/>
    			<input type="hidden" id="boardId" value="14"/>
+            <input type="hidden" id="messageId" value="139"/>
    			<textarea id="lithBoxPost" name="message"></textarea>
    			<input type="button" id="lithBoxPostButton" value="Post"/>
    			<div id="lithBoxMessages">
