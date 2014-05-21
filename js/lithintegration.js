@@ -25,7 +25,7 @@ $(document).ready(function() {
 		} else {
 			console.log("didn't find a message for this page; creating one");
 			var postData = { 
-					'message.body' : 'Check out this content at ' + window.location.href + '<br/>'+pageHash,
+					'message.body' : 'Check out this content at <a target="_self" href="' + window.location.href + '">'+window.location.href+'</a><br/>'+pageHash,
 					'message.subject' : document.title,
 					'tag.add' : pageHash
 			};
