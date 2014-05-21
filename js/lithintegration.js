@@ -57,6 +57,7 @@ $(document).ready(function() {
 			console.log(data);
 			var html = '<div class="reply"><p class="author">'+data.response.message.author.login+'</p><p class="body">'+data.response.message.body+'</p></div>';
 			$('#lithBoxMessages').prepend(html);
+			$('#lithBoxPost').val('');
 		});
 	});
 });
