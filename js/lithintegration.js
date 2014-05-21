@@ -19,7 +19,7 @@ $(document).ready(function() {
 				console.log(data);
 				$.each($responseData, function(key, value) {
 					console.log(value);
-					$('#lithBoxMessages').append('<div class="reply"><p class="author">'+value.author.login+' said:</p><p class="body">'+value.body+'</p><p class="time">at '+value.post_time+'</p></div>');
+					$('#lithBoxMessages').append('<div class="reply"><p class="author">at '+new Date(value.post_time)+' <b>'+value.author.login+'</b> said:</p><p class="body">'+value.body+'</p></div>');
 				});
 			});
 		} else {
@@ -40,7 +40,7 @@ $(document).ready(function() {
 					console.log(data);
 					$.each($responseData, function(key, value) {
 						console.log(value);
-						$('#lithBoxMessages').append('<div class="reply"><p class="author">'+value.author.login+' said:</p><p class="body">'+value.body+'</p><p class="time">at '+value.post_time+'</p></div>');
+						$('#lithBoxMessages').append('<div class="reply"><p class="author">at '+new Date(value.post_time)+ '<b>' + value.author.login+'</b> said:</p><p class="body">'+value.body+'</p></div>');
 					});
 				});
 			});
@@ -55,7 +55,7 @@ $(document).ready(function() {
 		console.log(postData);
 		$.post(v1ApiBase + '/messages/id/'+$('#messageId').val()+'/reply?restapi.session_key='+$('#sessionKey').val()+'&restapi.response_format=json&restapi.response_style=-types', postData, function(data) {
 			console.log(data);
-			var html = '<div class="reply"><p class="author">'+data.response.message.author.login+' said:</p><p class="body">'+data.response.message.body+'</p<p class="time">at '+value.post_time+'</p>></div>';
+			var html = '<div class="reply"><p class="author">at '+new Date(data.response.message.post_time) +' <b>'+data.response.message.author.login+'</b> said:</p><p class="body">'+data.response.message.body+'</p></div>';
 			$('#lithBoxMessages').prepend(html);
 			$('#lithBoxPost').val('');
 		});
